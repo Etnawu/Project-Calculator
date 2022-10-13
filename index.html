@@ -10,25 +10,38 @@
 </head>
 <body>
     <div id="headerContainer">
-        <div id="header">Calculator!</div>
+        <div id="header"></div>
     </div>
 
     <div id="calculator">
-        <div id="topCalc">
-            <div id="display">777</div>
-            <button id="clear">Clear</button>
-        </div>
-
-        <div id="bottomCalc">
-            <div id="numberBtns"></div>
-
-            <div id="operationBtns">
-                <button id="+">+</button>
-                <button id="-">-</button>
-                <button id="*">*</button>
-                <button id="/">/</button>
-                <button id="=">=</button>
+        <div id="calcGrid">
+            <div id="display">
+                <div id="screen2">777+</div>
+                <div id="screen">777</div>
             </div>
+
+            <button id="clear" class="topBtns">Clear</button>
+            <button id="backspace" class="topBtns">&lt;</button>
+
+            <button id="9" class="numberBtns" data-key="9">9</button>
+            <button id="8" class="numberBtns" data-key="8">8</button>
+            <button id="7" class="numberBtns" data-key="7">7</button>
+            <button id="+" class="operationBtns" data-key="+">+</button>
+
+            <button id="6" class="numberBtns" data-key="6">6</button>
+            <button id="5" class="numberBtns" data-key="5">5</button>
+            <button id="4" class="numberBtns" data-key="4">4</button>
+            <button id="-" class="operationBtns" data-key="-">-</button>
+
+            <button id="3" class="numberBtns" data-key="3">3</button>
+            <button id="2" class="numberBtns" data-key="2">2</button>
+            <button id="1" class="numberBtns" data-key="1">1</button>
+            <button id="*" class="operationBtns" data-key="*">x</button>
+
+            <button id="." class="numberBtns" data-key=".">.</button>
+            <button id="0" class="numberBtns" data-key="0">0</button>
+            <button id="=" class="equalBtn" data-key="=">=</button>
+            <button id="/" class="operationBtns" data-key="/">÷</button>
         </div>
     </div>
 

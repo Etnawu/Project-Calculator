@@ -13,7 +13,7 @@ const multiply = function(x, y) {
 
 const divide = function(x, y) {
     return x / y
-}
+};
 
 //operate function
 const operate = function(num1, num2, operators ){
@@ -30,4 +30,8 @@ const operate = function(num1, num2, operators ){
         case "/":
             return divide(num1, num2)
     }
-}
+};
+
+//display function
+let displayValue = "";
+

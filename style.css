@@ -1,5 +1,87 @@
 body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#headerContainer {
+    min-height: 10vh;
+}
+
+
+#calculator {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 450px;
+    width: 350px;
+    margin: auto;
+    box-sizing: border-box;
+
+}
+
+.topBtns {
+    grid-column: span 2;
+    background-color: grey;
+}
+
+#calcGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(auto, auto) repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+#display {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 3rem;
+}
+
+#calcGrid > button {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 3rem;
+}
+
+button:active {
+    scale: 0.98;
+}
+
+.topBtns:hover{
+    background-color: rgba(128, 128, 128, 0.75);
+}
+
+.operationBtns,
+.equalBtn {
+    background-color: orange;
+}
+
+.operationBtns:hover,
+.equalBtn:hover {
+    background-color: rgba(255, 166, 0, 0.75);
+}
+
+.numberBtns {
+    background-color: white;
+}
+
+.numberBtns:hover {
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
