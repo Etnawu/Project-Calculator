@@ -41,13 +41,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
     background-color: black;
-    color: whitesmoke;
+    gap: 10px;
+}
+
+#screenUp {
+    font-size: 2rem;
+    color: rgba(245, 245, 245, 0.75);
+    height: 20px;
+}
+
+#screenDown {
     font-size: 3rem;
+    color: whitesmoke;
 }
 
 #calcGrid > button {

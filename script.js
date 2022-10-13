@@ -1,3 +1,7 @@
+let firstNum = "";
+let secondNum = "";
+let operator ="";
+
 //operators
 const add = function(x, y) {
     return x + y
@@ -24,11 +28,15 @@ const operate = function(num1, num2, operators){
         case "-":
             return subtract(num1, num2)
 
-        case "*":
+        case "x":
             return multiply(num1, num2)
 
-        case "/":
+        case "÷":
+            if (num2 === 0) return null
             return divide(num1, num2)
+
+        default:
+        return null
     }
 };
 
@@ -48,14 +56,11 @@ numberButtons.forEach((button) => {
     button.addEventListener("click", () => appendNumber(button.textContent))
 });
 
-
-
 function appendNumber(number) {
     if (number === "." && bottomDisplay.textContent.includes('.')) return
-    bottomDisplay.textContent += number
+    secondNum += number;
+    bottomDisplay.textContent = secondNum;
 };
-//operator buttons
-
 
 //backspace button
 backspaceButton.addEventListener(
@@ -72,6 +77,35 @@ clearButton.addEventListener(
 );
 
 function clear() {
-    bottomDisplay.textContent = ""
-    topDisplay.textContent = ""
+    firstNum = "";
+    secondNum = "";
+    operator ="";
+    bottomDisplay.textContent = firstNum
+    topDisplay.textContent = secondNum
+}
+
+//operator buttons
+operatorButtons.forEach((button) => {
+    button.addEventListener("click", () => appendOp(button.textContent))
+});
+
+function appendOp(op){
+    operator = op;
+    firstNum = secondNum;
+    topDisplay.textContent = firstNum + " " + operator;
+    secondNum = "";
+    bottomDisplay.textContent = secondNum;
+}
+
+//equal button
+equalButton.addEventListener(
+    "click", () => calculate()
+)
+
+function calculate(){
+    firstNum = Number(firstNum);
+    secondNum = Number(secondNum);
+    topDisplay.textContent = "";
+    secondNum = operate(firstNum, secondNum, operator);
+    bottomDisplay.textContent = secondNum;
 }
