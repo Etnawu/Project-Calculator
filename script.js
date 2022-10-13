@@ -32,7 +32,7 @@ const operate = function(num1, num2, operators){
             return multiply(num1, num2)
 
         case "÷":
-            if (num2 === 0) return null
+            if (num2 === 0) return 0
             return divide(num1, num2)
 
         default:
@@ -105,7 +105,7 @@ equalButton.addEventListener(
 function calculate(){
     firstNum = Number(firstNum);
     secondNum = Number(secondNum);
-    topDisplay.textContent = "";
+    topDisplay.textContent = secondNum + " " + operator;
     secondNum = operate(firstNum, secondNum, operator);
     bottomDisplay.textContent = secondNum;
 }
