@@ -1,6 +1,7 @@
 let firstNum = "";
 let secondNum = "";
 let operator ="";
+let displayValue = "";
 
 //operators
 const add = function(x, y) {
@@ -32,11 +33,9 @@ const operate = function(num1, num2, operators){
             return multiply(num1, num2)
 
         case "÷":
-            if (num2 === 0) return 0
-            return divide(num1, num2)
+            if (num2 <= 0) return "Error";
+            else return divide(num1, num2)
 
-        default:
-        return null
     }
 };
 
@@ -58,8 +57,8 @@ numberButtons.forEach((button) => {
 
 function appendNumber(number) {
     if (number === "." && bottomDisplay.textContent.includes('.')) return
-    secondNum += number;
-    bottomDisplay.textContent = secondNum;
+    displayValue += number;
+    bottomDisplay.textContent = displayValue;
 };
 
 //backspace button
@@ -68,8 +67,10 @@ backspaceButton.addEventListener(
 );
 
 function backspace() {
+    if (displayValue !=""){
     bottomDisplay.textContent = bottomDisplay.textContent.toString().slice(0, -1)
-};
+    displayValue.toString().slice(0, -1)
+}};
 
 //clear button
 clearButton.addEventListener(
@@ -79,10 +80,11 @@ clearButton.addEventListener(
 function clear() {
     firstNum = "";
     secondNum = "";
-    operator ="";
+    displayValue = "";
+    operator = "";
     bottomDisplay.textContent = firstNum
     topDisplay.textContent = secondNum
-}
+};
 
 //operator buttons
 operatorButtons.forEach((button) => {
@@ -91,10 +93,12 @@ operatorButtons.forEach((button) => {
 
 function appendOp(op){
     operator = op;
-    firstNum = secondNum;
+    if (displayValue === "")return
+    else
+    firstNum = displayValue;
     topDisplay.textContent = firstNum + " " + operator;
-    secondNum = "";
-    bottomDisplay.textContent = secondNum;
+    displayValue = "";
+    bottomDisplay.textContent = displayValue;
 }
 
 //equal button
@@ -103,9 +107,16 @@ equalButton.addEventListener(
 )
 
 function calculate(){
+    if (firstNum === '' && secondNum ==='') return
+    else
+    displayValue = Number(displayValue);
     firstNum = Number(firstNum);
     secondNum = Number(secondNum);
-    topDisplay.textContent = secondNum + " " + operator;
-    secondNum = operate(firstNum, secondNum, operator);
-    bottomDisplay.textContent = secondNum;
+    secondNum = displayValue;
+    displayValue = operate(firstNum, secondNum, operator);
+    bottomDisplay.textContent = displayValue;
+    firstNum = "";
+    secondNum = "";
+    topDisplay.textContent = secondNum;
 }
+//firstNum; secondNum; thirdNum
