@@ -109,7 +109,8 @@ equalButton.addEventListener(
 )
 
 function calculate(){
-    if (firstNum === '' && secondNum ==='') return
+    if (firstNum === '' ) return
+    else if(displayValue ==='') return
     else
     displayValue = Number(displayValue);
     firstNum = Number(firstNum);
