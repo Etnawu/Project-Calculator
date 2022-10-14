@@ -93,7 +93,8 @@ operatorButtons.forEach((button) => {
 });
 
 function appendOp(op){
-    if (operator !="")return
+    if (operator !="") return
+    else if (displayValue == "") return
     else
     operator = op;
     firstNum = displayValue;
