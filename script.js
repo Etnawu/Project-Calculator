@@ -67,10 +67,11 @@ backspaceButton.addEventListener(
 );
 
 function backspace() {
-    if (displayValue !=""){
-    bottomDisplay.textContent = bottomDisplay.textContent.toString().slice(0, -1)
-    displayValue.toString().slice(0, -1)
-}};
+    if (displayValue ==="") return
+    else
+    displayValue = displayValue.toString().slice(0, -1)
+    bottomDisplay.textContent = displayValue
+};
 
 //clear button
 clearButton.addEventListener(
@@ -92,9 +93,9 @@ operatorButtons.forEach((button) => {
 });
 
 function appendOp(op){
-    operator = op;
-    if (displayValue === "")return
+    if (operator !="")return
     else
+    operator = op;
     firstNum = displayValue;
     topDisplay.textContent = firstNum + " " + operator;
     displayValue = "";
@@ -117,6 +118,7 @@ function calculate(){
     bottomDisplay.textContent = displayValue;
     firstNum = "";
     secondNum = "";
+    operator = "";
     topDisplay.textContent = secondNum;
 }
 //firstNum; secondNum; thirdNum
