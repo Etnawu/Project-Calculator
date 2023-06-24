@@ -1,5 +1,4 @@
 # Project-Calculator
-Project: Calculator
 
 About: Calculator web application made for the Odin project.
 
