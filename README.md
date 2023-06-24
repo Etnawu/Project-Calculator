@@ -6,4 +6,4 @@ About: Calculator web application made for the Odin project.
 
 [Link to pages](https://etnawu.github.io/Project-Calculator/)
 
-![calculator picture](https://github.com/Etnawu/Project-Calculator/blob/main/calculator.png?raw=true)
+![calculator picture](https://github.com/Etnawu/Project-Rock-Paper-Scissor/blob/main/rockpaperscissor.png?raw=true)
